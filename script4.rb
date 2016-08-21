@@ -86,4 +86,84 @@ print  "#{demo_array[2]}"
 multi_d_array = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
 multi_d_array.each { |x| puts "#{x}\n" }
 
+# Doing a hash table. As a reminder, a hash is a collection of key-value pairs.
+my_hash = { 
+  "name" => "Eric",
+  "age" => 26,
+  "hungry?" => true
+}
+
+puts my_hash["name"]
+puts my_hash["age"]
+puts my_hash["hungry?"]
+
+# Different way declaring a hash using the new function
+pets = Hash.new
+pets["Bud"] = "cat"
+pets["Tweetie"] = "Bird"
+# Access the Hash elements
+puts pets["Bud"]
+puts pets["Tweetie"]
+
+
+# Mixing arrays and Hashes
+friends = ["Milhouse", "Ralph", "Nelson", "Otto"]
+
+family = { "Homer" => "dad",
+  "Marge" => "mom",
+  "Lisa" => "sister",
+  "Maggie" => "sister",
+  "Abe" => "grandpa",
+  "Santa's Little Helper" => "dog"
+}
+
+friends.each { |x| puts "#{x}" }  # Remember that .each is a do loop function
+family.each { |x, y| puts "#{x}: #{y}" }
+
+
+# As we iterate through the array, as usual, we can use any placeholder name for the bit between two | | characters.
+languages = ["HTML", "CSS", "JavaScript", "Python", "Ruby"]
+languages.each { |whatever| puts whatever}
+
+# Interating over an array of arrays.
+s = [["ham", "swiss"], ["turkey", "cheddar"], ["roast beef", "gruyere"]]
+s.each { |sub_array| puts sub_array }
+
+# Interating over a Hash
+secret_identities = {
+  "The Batman" => "Bruce Wayne",
+  "Superman" => "Clark Kent",
+  "Wonder Woman" => "Diana Prince",
+  "Freakazoid" => "Dexter Douglas"
+}
+  
+secret_identities.each do |identity, name|
+  puts "#{identity}: #{name}"
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
