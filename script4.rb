@@ -49,6 +49,7 @@ loop do
   break if i <= 0
 end
 
+# Using data structures ie. arrays, hashes, multi-dimensionals...etc.
 # Looping with an array
 array = [1,2,3,4,5]
 
