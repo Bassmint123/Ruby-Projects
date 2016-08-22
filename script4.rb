@@ -130,7 +130,7 @@ languages.each { |whatever| puts whatever}
 s = [["ham", "swiss"], ["turkey", "cheddar"], ["roast beef", "gruyere"]]
 s.each { |sub_array| puts sub_array }
 
-# Interating over a Hash
+# Iterating over a Hash
 secret_identities = {
   "The Batman" => "Bruce Wayne",
   "Superman" => "Clark Kent",
