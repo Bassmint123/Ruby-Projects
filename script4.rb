@@ -49,7 +49,6 @@ loop do
   break if i <= 0
 end
 
-# Using data structures ie. arrays, hashes, multi-dimensionals...etc.
 # Looping with an array
 array = [1,2,3,4,5]
 
@@ -130,7 +129,7 @@ languages.each { |whatever| puts whatever}
 s = [["ham", "swiss"], ["turkey", "cheddar"], ["roast beef", "gruyere"]]
 s.each { |sub_array| puts sub_array }
 
-# Iterating over a Hash
+# Interating over a Hash
 secret_identities = {
   "The Batman" => "Bruce Wayne",
   "Superman" => "Clark Kent",
@@ -141,6 +140,18 @@ secret_identities = {
 secret_identities.each do |identity, name|
   puts "#{identity}: #{name}"
 end
+
+# Builds a histogram takes a user's input, then builds a hash from that input. 
+# Each key in the hash will be a word from the user; each value will be the number of times that word occurs.
+puts "Text please: "
+text = gets.chomp
+
+words = text.split(" ")
+frequencies = Hash.new(0)
+words.each { |word| frequencies[word] += 1 }
+frequencies = frequencies.sort_by {|a, b| b }
+frequencies.reverse!
+frequencies.each { |word, frequency| puts word + " " + frequency.to_s }
 
 
 
