@@ -50,3 +50,12 @@ end
 
 greeter("Brad")
 by_three?(9)
+
+# Example of a "code block" which is also fairly similar to an anonymous function in JavaScript
+# There are some differences between blocks and methods. Blocks are like nameless methods. 
+5.times do   # print it five times
+  puts "I'm a code block!"
+end
+
+5.times { puts "As am I!" }  # print it five times
+
