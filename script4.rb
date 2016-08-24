@@ -141,6 +141,16 @@ secret_identities.each do |identity, name|
   puts "#{identity}: #{name}"
 end
 
+# Input for hash program
+the 2
+falls 1
+on 1
+mainly 1
+in 1
+rain 1
+plain 1
+Spain 1
+
 # Builds a histogram takes a user's input, then builds a hash from that input. 
 # Each key in the hash will be a word from the user; each value will be the number of times that word occurs.
 puts "Text please: "
