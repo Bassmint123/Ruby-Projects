@@ -7,7 +7,7 @@ new_answer = 3 + my_answer
 newer_answer = new_answer % 2
 
 print "Hi everybody"
-put "Hi folks"
+puts "Hi folks"
 print "Do you like bacon"
 
 # Doing a method to count string length
