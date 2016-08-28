@@ -110,6 +110,28 @@ book_2 = "A Brief History of Time"
 result = book_1 <=> book_2  
 puts "#{result}"
 
+# Using the alphabetizing method to sort the books array
+def alphabetize(arr, rev=false)
+  if rev
+    arr.sort { |item1, item2| item2 <=> item1 }
+  else
+    arr.sort { |item1, item2| item1 <=> item2 }
+  end
+end
+
+books = ["Heart of Darkness", "Code Complete", "The Lorax", "The Prophet", "Absalom, Absalom!"]
+numbers = [4, 7, 1, 5, 6]
+
+puts "A-Z: #{alphabetize(books)}"
+puts "Z-A: #{alphabetize(books, true)}"
+puts "1 thru n: #{alphabetize(books)}"  # the can also take the numbers array and put into numerical order
+
+# We can use a reverse! method to reverse sort the order of the array
+numbers = [5, 1, 3, 8]
+numbers.reverse!
+puts numbers
+
+
 # Using symbols in the hash. However, symbols are not strings
 menagerie = { :foxes => 2,
   :giraffe => 1,
@@ -119,5 +141,34 @@ menagerie = { :foxes => 2,
   :ham => 1
 }
 
+# Here we use the object_id to give the object identifier. We can see the two "strings" are actually different objects, 
+# whereas the :symbol is the same object listed twice.
+puts "string".object_id
+puts "string".object_id
 
+puts :symbol.object_id
+puts :symbol.object_id
+
+#
+# :my symbol # Don't do this!
+# :my_symbol # Do this instead.
+#
+
+# In regards to symbols
+# 1. They're immutable, meaning they can't be changed once they're created;
+# 2. Only one copy of any symbol exists at a given time, so they save memory;
+# 3. Symbol-as-keys are faster than strings-as-keys because of the above two reasons.
+# 
+symbol_hash = {
+  :one => 1,
+  :two => 2,
+  :three => 3
+}
+
+# Converting between strings and symbols
+:sasquatch.to_s
+# ==> "sasquatch"
+
+"sasquatch".to_sym
+# ==> :sasquatch
 
