@@ -9,18 +9,34 @@ else
   puts "You picked zero!"
 end
 
-# Testing ou the unless control flow to test for "false" conditions
+# Testing out the unless control flow to test for "false" conditions
 bacon = false
 unless bacon  
   puts "I'm writing Ruby programs!"
 else
   puts "Time to eat!"
 end
+
+
  # Real simple unless usage
 problem = false
 unless problem
    print "Unless fired"
 end
+
+# Control flow using a user's input to replace "s" with "th" 
+print "Thtring, pleathe!: "
+user_input = gets.chomp
+user_input.downcase!
+
+if user_input.include? "s"  #As a general rule, Ruby methods that end with ? evaluate to the boolean values true or false.
+  user_input.gsub!(/s/, "th")  # Substitute "s" with a "th"
+else
+  puts "There are no s characters in your input\n"
+end
+  
+puts "Your string is: #{user_input}"
+
 
 
 # Comparitors checking values
