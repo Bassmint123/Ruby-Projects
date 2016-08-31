@@ -78,6 +78,23 @@ end
 # The .times method is a like a super compact for loop
  5.times{print "This is a test."}
 
+# This is about looping to substitute a word with REDACTED 
+puts "Text to search through: "
+text = gets.chomp
+puts "Word to redact: "
+redact = gets.chomp
+
+words = text.split(" ")  #divide the user's input into individual words by using the split method
+
+words.each do |word|
+  if word != redact
+    print word + " "
+  else
+    print "REDACTED "
+  end
+end
+ 
+ 
 # Indexing an array. Print the third number 
 demo_array = [100, 200, 300, 400, 500]
 print  "#{demo_array[2]}"
