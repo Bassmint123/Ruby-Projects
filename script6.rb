@@ -72,7 +72,10 @@ my_hash.each_key { |k| print k, " " }
 my_hash.each_value { |v| print v, " " }
 # ==> 1 2 3
 
+#
 # This is a Ruby program that can keep track of movie ratings
+# This program has CRUD functionality, which stands for Create, Read, Update, and Delete.
+#
 movies = {
   Memento: 3,
   Primer: 4,
