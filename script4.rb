@@ -59,10 +59,10 @@ end
 
 numbers = [1, 2, 3, 4, 5]
 
-# one way to loop
+# one style of looping
 numbers.each { |item| puts item }
 
-# another way to loop
+# another style of looping
 numbers.each do |item|
   puts item
 end
@@ -77,6 +77,18 @@ end
   
 # The .times method is a like a super compact for loop
  5.times{print "This is a test."}
+
+# Using push method to populate the "evens" array 
+numbers = [1, 2, 3, 4, 5, 6]
+evens = []
+numbers.each do |number|
+  if number % 2 == 0
+    evens.push(number)
+  end
+end
+print evens
+# prints '[2, 4, 6]'
+
 
 # This is about looping to substitute a word with REDACTED 
 puts "Text to search through: "
