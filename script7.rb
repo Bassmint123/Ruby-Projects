@@ -37,3 +37,28 @@ def add(a,b)
 end
 
 add(3, 2)
+
+# Using the short-circuit feature for && and ||. In other words it does not have to 
+# evaluate the entire expression. For example if a && b and we know a is false, then
+# then it does not need to read past && to know the whole expression will be false.
+def a
+  puts "A was evaluated!"
+  return true
+end
+
+def b
+  puts "B was also evaluated!"
+  return true
+end
+
+puts a || b
+puts "------"
+puts a && b
+
+# Using the .times operator
+5.times { puts "Odelay!" }
+# Prints 5 "Odelay!"s on separate lines
+
+# Using the each operator
+[1, 2, 3].each { |x| puts x * 10 }
+# Prints 10, 20, 30 on separate lines
