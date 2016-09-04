@@ -62,3 +62,107 @@ puts a && b
 # Using the each operator
 [1, 2, 3].each { |x| puts x * 10 }
 # Prints 10, 20, 30 on separate lines
+
+
+# Using the .upto method instead of a for loop
+95.upto(100) { |num| print num, " " }
+# Prints 95 96 97 98 99 100
+"L".upto("P") { |num| puts num, " " }
+# Prints L M N O P
+
+# Example of using a Call and Response
+# This checks to see if integer "age" will respond to next
+[1, 2, 3].respond_to?(:push)  # would return true as the push method can be used on an array
+[1, 2, 3].respond_to?(:to_sym) # would return false as the to_sym method cannot be used on an array
+
+# Instead of typing out the .push method name, we can 
+# simply use <<, the concatenation operator (also known as "the shovel") to add an element to the end of an array.
+alphabet = ["a", "b", "c"]
+alphabet << "d"
+# It also works on strings too!
+caption = "A giraffe surrounded by "
+caption << "weezards!" 
+puts caption  # outputs "A giraffe surrounded by weezards!"
+age = 38
+"I am " << age.to_s << " years old."# ==> "I am 38 years old."
+
+#
+# Version 1
+# Some code that could be refactored starts like this segment of code
+# can be rewritten like Version 2 below.
+#
+$VERBOSE = nil    # We'll explain this at the end of the lesson.
+require 'prime'   # This is a module. We'll cover these soon!
+
+def first_n_primes(n)
+
+  unless n.is_a? Integer
+    return "n must be an integer."
+  end
+
+  if n <= 0
+    return "n must be greater than 0."
+  end
+  
+  prime_array = [] if prime_array.nil?
+  
+  prime = Prime.new
+  for num in (1..n)
+    prime_array.push(prime.next)
+  end
+  return prime_array
+end
+
+first_n_primes(10)
+
+#
+# This is Version 2 of the code above, except refactored. The code
+# does the exact same thing as Version 1. Version 3 below, is factored even more!
+#
+$VERBOSE = nil    # We'll explain this at the end of the lesson.
+require 'prime'   # This is a module. We'll cover these soon!
+
+def first_n_primes(n)
+  puts "n must be an integer." unless n.is_a? Integer
+  puts "n must be greater than 0." if n <= 0
+  prime_array ||= []
+  prime = Prime.new
+  n.times { prime_array << (prime.next)}
+  prime_array
+end
+
+first_n_primes(10)
+
+#
+# This is Version 3. Yet, further refactored.
+#
+require 'prime'
+def first_n_primes(n)
+  # Check for correct input!
+  "n must be an integer" unless n.is_a? Integer
+  "n must be greater than 0" if n <= 0
+
+  # The Ruby 1.9 Prime class makes the array automatically!
+  prime = Prime.instance
+  prime.first n
+end
+
+first_n_primes(10)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
