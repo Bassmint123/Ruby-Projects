@@ -116,6 +116,57 @@ strings_array = numbers_array.map(&:to_s)
 strings_array.each {|x| puts "#{x}"}
 
 
+# Like procs, lambdas are objects. when we pass the lambda to lambda_demo, 
+# the method calls the lambda and executes its code.
+def lambda_demo(a_lambda)
+  puts "I'm the method!"
+  a_lambda.call
+end
+
+lambda_demo(lambda { puts "I'm the lambda!" })
+
+
+# Using more of the lambda syntax
+strings = ["leonardo", "donatello", "raphael", "michaelangelo"]
+symbolize = lambda { |x| x.to_sym }   # Create the symbolize lambda
+symbols = strings.collect(&symbolize) # Convert array elements to symbols
+symbols.each {|y| puts "#{y}"}        # Output => [:leonardo, :donatello, :raphael, :michaelangelo]
+
+
+#
+# Proc vs. lambda. Check out the difference.
+#
+# First, a lambda checks the number of arguments passed to it, while a proc does not. 
+# This means that a lambda will throw an error if you pass it the wrong number of arguments, 
+# whereas a proc will ignore unexpected arguments and assign nil to any that are missing.
+#
+# Second, when a lambda returns, it passes control back to the calling method; 
+# when a proc returns, it does so immediately, without going back to the calling method.
+#
+# AT RUNTIME...
+# See how the proc says Batman will win? This is because it returns immediately, 
+# without going back to the batman_ironman_proc method.
+#
+# Our lambda, however, goes back into the method after being called, 
+# so the method returns the last code it evaluates: "Iron Man will win!"
+
+def batman_ironman_proc
+  victor = Proc.new { return "Batman will win!" }
+  victor.call
+  "Iron Man will win!"
+end
+
+puts batman_ironman_proc
+
+def batman_ironman_lambda
+  victor = lambda { return "Batman will win!" }
+  victor.call
+  "Iron Man will win!"
+end
+
+puts batman_ironman_lambda
+
+
 
 
 
