@@ -1,3 +1,11 @@
+
+# 1. A block is just a bit of code between do..end or {}. It's not an object on its own, 
+#    but it can be passed to methods like .each or .select.
+# 2. A proc is a saved block we can use over and over.
+# 3. A lambda is just like a proc, only it cares about the number of arguments 
+#    it gets and it returns to its calling method rather than returning immediately.
+
+
 # Example of a code block
 5.times do |x|
   puts "I'm a block!"
@@ -165,6 +173,12 @@ def batman_ironman_lambda
 end
 
 puts batman_ironman_lambda
+
+# Create a lambda, symbol_filter, that takes one parameter and checks to see if that parameter .is_a? Symbol.
+my_array = ["raindrops", :kettles, "whiskers", :mittens, :packages]
+symbol_filter = lambda { |x| x.is_a? Symbol }
+symbols = my_array.select(&symbol_filter)
+symbols.each {|y| puts "#{y}"}
 
 
 
