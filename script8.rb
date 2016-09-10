@@ -180,6 +180,47 @@ symbol_filter = lambda { |x| x.is_a? Symbol }
 symbols = my_array.select(&symbol_filter)
 symbols.each {|y| puts "#{y}"}
 
+# Get the integers from odds_n_ends with a method that calls a block to check for integers
+odds_n_ends = [:weezard, 42, "Trady Blix", 3, true, 19, 12.345]
+ints = odds_n_ends.select {|x| x.is_a? Integer}
+# Outputs => 42, 3, 19
+
+# Create a proc called under_100 that checks if a number it's passed is less than 100. 
+ages = [23, 101, 7, 104, 11, 94, 100, 121, 101, 70, 44]
+
+under_100 = Proc.new { |x|
+    if x < 100
+      x   # return x
+    end
+}
+
+ages.select(&under_100)
+
+# Create a lambda called first_half that checks if a hash value is 
+# less than (that is, earlier in the alphabet than) "M". We are using
+# the |key, value| since this is a hash
+crew = {
+  captain: "Picard",
+  first_officer: "Riker",
+  lt_cdr: "Data",
+  lt: "Worf",
+  ensign: "Ro",
+  counselor: "Troi",
+  chief_engineer: "LaForge",
+  doctor: "Crusher"
+}
+# Create the lambda here
+first_half = lambda { |key, value| 
+   if value < "M"
+      value
+   end
+}
+
+a_to_m = crew.select(&first_half)  # Pass lambda as the parameter here
+a_to_m.each {|x, y| puts "#{x}: #{y}"}
+
+
+
 
 
 
