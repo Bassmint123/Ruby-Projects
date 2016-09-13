@@ -116,3 +116,41 @@ class Person
  # end
  # 
 end
+
+#
+# OR instead of using attr_reader and attr_writer, we can use the "attr_accessor" to make 
+# a variable readable and writeable in one fell swoop.
+# 
+lass Person
+  attr_reader :name
+  attr_accessor :job
+  
+  def initialize(name, job)
+    @name = name
+    @job = job
+  end
+end
+
+#
+# Example using a module. They are mostly used for storage. They do not work like a class.
+# Modules are good for carrying constants (namespaces)
+# Modules can add state to an existing class.
+# Modules can have static methods
+# Modules can act as namespaces
+#
+module Circle   # Modules are written in CamelCase
+
+  PI = 3.141592653589793
+  
+  def Circle.area(radius)
+    PI * radius**2
+  end
+  
+  def Circle.circumference(radius)
+    2 * PI * radius
+  end
+end
+
+
+
+
