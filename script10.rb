@@ -151,6 +151,56 @@ module Circle   # Modules are written in CamelCase
   end
 end
 
+#
+# One of the main purposes of modules is to separate methods and constants into named spaces. 
+# This is called (conveniently enough) namespacing, and it's how Ruby doesn't confuse Math::PI and Circle::PI.
+#
+# The double colon is called the scope resolution operator, which is a fancy way of 
+# saying it tells Ruby where you're looking for a specific bit of code. 
+# If we say Math::PI, Ruby knows to look inside the Math module to get that PI, 
+# not any other PI (such as the one we created in Circle).
+#
+module Math
+   PI
+ end
+  
+ puts Math::PI
+ 
+# Output => 3.141592653589793
+
+#
+# Some modules, like Math, are already present in the interpreter. Others need to be explicitly brought in, 
+# however, and we can do this using "require". We can do this simply by typing the following:  require 'module'
+#
+require 'date'
+
+puts Date.today
+
+# Output => Whatever today's date is.
 
 
+#
+#We can do more than just require a module, however. We can also include it!
+# Any class that includes a certain module can use those module's methods!
+# A nice effect of this is that you no longer have to prepend your constants and methods with 
+# the module name. Since everything has been pulled in, you can simply write PI instead of Math::PI.
+#
+# The scoop on require vs. include 
+# The Ruby include statement simply makes a reference to a module. If that module is in a separate file, 
+# you must use require (or its less commonly used cousin, load) to drag that file in before using include.
+#
+class Angle
+  include Math
+  attr_accessor :radians
+  
+  def initialize(radians)
+    @radians = radians
+  end
+  
+  def cosine
+    cos(@radians)
+  end
+end
 
+acute = Angle.new(1)
+acute.cosine
