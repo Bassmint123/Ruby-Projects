@@ -13,7 +13,7 @@ class Account
   end
   
   def display_balance(pin_number)
-    puts pin_number == pin ? "Balance: $#{@balance}." : pin_error
+    puts pin_number == pin ? "Balance: $#{@balance}." : pin_error  # using terinary notation here for if-else flow control
   end
   
   def withdraw(pin_number, amount)
