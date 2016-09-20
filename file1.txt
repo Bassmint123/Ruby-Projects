@@ -1,0 +1,3 @@
+Let's do it correctly
+This is the second line entered
+This is the third line for testing read-write_to_a_file.rb
