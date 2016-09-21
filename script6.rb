@@ -48,6 +48,7 @@ puts "Symbol time: #{symbol_time} seconds."
 
 #
 # Using the select method to filter a hash value
+# Using delete to delete a hash value 
 #
 grades = { alice: 100,
   bob: 92,
@@ -55,11 +56,21 @@ grades = { alice: 100,
   dave: 97
 }
 
+puts "Bob's age is #{grades[:bob]}"  # Using non-rocket notation to output bob's grade.
+# Output => Bob's age is 92
+
 grades.select {|name, grade| grade < 97} # Select grades less than 97
 # ==> {:bob=>92, :chris=>95}
 
 grades.select { |k, v| k == :alice } # Select key symbols equal to Alice
 # ==> {:alice=>100}
+
+# We can delete something from the hash too.
+grades.delete(:chris)
+grades.each {|name, grade| puts name}
+# Output => alice
+#           bob
+#           dave
 
 #
 # We can iterate over just keys or just values using "each_key" and "each_value" methods
