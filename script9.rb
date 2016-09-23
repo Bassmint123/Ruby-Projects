@@ -1,5 +1,6 @@
 #
-# By convention, class names start with a capital letter and use CamelCase instead of relyingonunderscores.
+# By convention, class names start with a capital letter and use CamelCase instead of relying_on_underscores.
+# The difference between classes and objects. An object is a unit of data. A class is what kind of data it is.
 # In Ruby, we use @ before a variable to signify that it's an instance variable. This means that the 
 # variable is attached to the instance of the class. 
 #
@@ -156,7 +157,8 @@ end
 class Monkey; end. 
 #This is a time saver when you're writing something very short, like an empty class or method definition.
 
-# Demo of how we're trying to get Dragon to inherit from Creature and Person. We'll get a superclass mismatch for class Dragon error if we try this.
+# Demo of how we're trying to get Dragon to inherit from Creature and Person. We'll get a superclass 
+# mismatch for class Dragon error if we try this.
 class Creature
   def initialize(name)
     @name = name
@@ -171,6 +173,36 @@ end
 
 class Dragon < Creature; end
 class Dragon < Person; end  # Creates and error
+
+#
+# This is an example of how the override behavior works.
+# it runs the Parent.override function because that variable (dad) is a Parent. 
+# But when line 15 runs it prints out the Child.override messages
+# because son is an instance of Child and Child overrides that function 
+# by defining its own version.
+#
+class Parent
+
+  def override()
+    puts "PARENT override()"
+  end
+end
+
+class Child < Parent
+  def override()
+    puts "CHILD override()"
+  end
+end
+
+dad = Parent.new()
+son = Child.new()
+
+dad.override()
+son.override()
+
+# Output =>  PARENT override()
+#            CHILD override()
+
 
 
 
