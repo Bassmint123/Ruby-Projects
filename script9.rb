@@ -175,6 +175,30 @@ class Dragon < Creature; end
 class Dragon < Person; end  # Creates and error
 
 #
+# IMPLICIT INHERITENCE
+#
+class Parent
+
+  def implicit()
+    puts "PARENT implicit()"
+  end
+end
+
+class Child < Parent
+end
+
+dad = Parent.new()
+son = Child.new()
+
+dad.implicit()
+son.implicit()
+
+# Output =>  PARENT implicit()
+#            PARENT implicit()
+
+
+
+# EXPLICID INHERITENCE w/override
 # This is an example of how the override behavior works.
 # it runs the Parent.override function because that variable (dad) is a Parent. 
 # But when line 15 runs it prints out the Child.override messages
@@ -203,8 +227,99 @@ son.override()
 # Output =>  PARENT override()
 #            CHILD override()
 
+# SUPER()
+# Example using super() which reaches into the Parent class
+#
+class Parent
+  def altered()
+    puts "PARENT altered()"
+  end
+end
+
+class Child < Parent
+  def altered()
+    puts "CHILD, BEFORE PARENT altered()"
+    super()
+    puts "CHILD, AFTER PARENT altered()"
+  end
+
+end
+
+dad = Parent.new()
+son = Child.new()
+
+dad.altered()
+son.altered()
+
+# Output =>  PARENT altered()
+#            CHILD, BEFORE PARENT altered()
+#            PARENT altered()
+#            CHILD, AFTER PARENT altered()
 
 
+# The most common use of super() is actually in initialize functions in base classes. 
+# This is usually the only place where you need to do some things in a child, then complete the 
+# initialization in the parent. 
+# In this case, we are setting some variables in the initialize before having the Parent initialize with its Parent.initialize.
+# Here's a quick example of doing that in the Child:
+class Child < Parent
+    def initialize(stuff)
+        @stuff = stuff
+        super()
+    end
+end
 
+
+#
+# In this code I'm not using the name Parent, since there is not a parent-child is-a relationship. 
+# This is a has-a relationship, where Child has-a Other that it uses to get its work done.
+#
+class Other
+
+  def override()
+    puts "OTHER override()"
+  end
+
+  def implicit()
+    puts "OTHER implicit()"
+  end
+
+  def altered()
+    puts "OTHER altered()"
+  end
+end
+
+class Child
+
+  def initialize()
+    @other = Other.new()
+  end
+
+  def implicit()
+    @other.implicit()
+  end
+
+  def override()
+    puts "CHILD override()"
+  end
+
+  def altered()
+    puts "CHILD, BEFORE OTHER altered()"
+    @other.altered()
+    puts "CHILD, AFTER OTHER altered()"
+  end
+end
+
+son = Child.new()
+
+son.implicit()
+son.override()
+son.altered()
+
+# OTHER implicit()
+# CHILD override()
+# CHILD, BEFORE OTHER altered()
+# OTHER altered()
+# CHILD, AFTER OTHER altered()
 
 
