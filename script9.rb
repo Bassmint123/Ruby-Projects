@@ -272,7 +272,7 @@ end
 
 #
 # In this code I'm not using the name Parent, since there is not a parent-child is-a relationship. 
-# This is a has-a relationship, where Child has-a Other that it uses to get its work done.
+# This is a "has-a" relationship, where Child has-a Other that it uses to get its work done.
 #
 class Other
 
@@ -292,7 +292,7 @@ end
 class Child
 
   def initialize()
-    @other = Other.new()
+    @other = Other.new()  # Notice we are initializing the "Other" class here to be implicit.
   end
 
   def implicit()
