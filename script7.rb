@@ -3,7 +3,7 @@
 puts "This is pretty cool" if true
 puts "This is a fun line too." unless false
 
-# Using the ternary. The format is --> boolean ? Do this if true: Do this if false
+# Using the ternary for short hand. The format is --> boolean ? Do this if true: Do this if false
 puts 6 < 12 ? "6 is less than a dozen!" : "6 is not less than a dozen."
 
 # Here is a more condensed version of the Case Statement
