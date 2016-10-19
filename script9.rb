@@ -35,8 +35,8 @@ javascript.description
 #   @@ is for class variables
 #
 # Global variables can be declared in two ways: 
-# 1. Use the @ to define the variable outside of any method or class, and voilà! It's global. 
-# 2. If you want to make a variable global from inside a method or class, just start it with a $, like so: $matz.
+#  1. Use the @ to define the variable outside of any method or class, and voilà! It's global. 
+#  2. If you want to make a variable global from inside a method or class, just start it with a $, like so: $matz.
 #
 #
 class Computer
