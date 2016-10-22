@@ -1,0 +1,3 @@
+{"pets":{"name":"Jeffrey","species":"Giraffe"}}
+
+"_comment": "This file goes with api_call_script.txt. Yeah, there are not supposed to be comments in JSON. Oh, well",

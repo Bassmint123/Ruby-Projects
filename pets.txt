@@ -1,0 +1,15 @@
+<!-- This file goes with the api_call_script.rb program -->
+<pets>
+  <pet>
+    <name>Jeffrey</name>
+    <species>Giraffe</species>
+  </pet>
+  <pet>
+    <name>Gustav</name>
+    <species>Dog</species>
+  </pet>
+  <pet>
+    <name>Gregory</name>
+    <species>Duck</species>
+  </pet>
+</pets>
