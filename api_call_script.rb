@@ -1,4 +1,4 @@
-# API call to placekitten.
+# This is an API call to placekitten.
 require 'open-uri'
 
 kittens = open('http://placekitten.com/200/300')
