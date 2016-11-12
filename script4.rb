@@ -115,6 +115,20 @@ print  "#{demo_array[2]}"
 multi_d_array = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
 multi_d_array.each { |x| puts "#{x}\n" }
 
+# Comparing two arrays for content
+# Example 1
+results_A = [ 1, 1, 3, 5, 7, 7, 3] & [ 1, 2, 3, 0, 9, 4, 8, 5, 6, 4, 5]
+print "\nThis is the results A: "
+print results_A  # I am printing here on a second line as an array cannot be printed as a string
+
+#Example 2
+array1 = [ 1, 1, 3, 5 ]
+array2 = [ 1, 2, 3 ]
+results_B = array1 & array2
+print "\nThis is the results B: "
+print results_B
+
+
 # Doing a hash table. As a reminder, a hash is a collection of key-value pairs.
 my_hash = { 
   "name" => "Eric",
