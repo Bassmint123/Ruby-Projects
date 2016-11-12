@@ -128,6 +128,12 @@ results_B = array1 & array2
 print "\nThis is the results B: "
 print results_B
 
+# Returns a new array by removing duplicate values in self.
+a = [ "a", "a", "b", "b", "c" ]
+a.uniq   # => ["a", "b", "c"]
+
+b = [["student","sam"], ["student","george"], ["teacher","matz"]]
+b.uniq { |s| s.first } # => [["student", "sam"], ["teacher", "matz"]]
 
 # Doing a hash table. As a reminder, a hash is a collection of key-value pairs.
 my_hash = { 
