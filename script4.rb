@@ -77,6 +77,22 @@ end
   
 # The .times method is a like a super compact for loop
  5.times{print "This is a test."}
+ 
+ 
+# Here we take a string of numbers and convert them to an array of integers
+# Then we add up all the integers in the array to get a final sum.
+
+nums = "1 3 5 7 2 6"
+nums = nums.split
+arr_ints = nums.map(&:to_i)
+
+ans = 0
+arr_ints.each do |x|
+  ans += x
+end
+
+print "#{ans}"
+
 
 # Using push method to populate the "evens" array 
 numbers = [1, 2, 3, 4, 5, 6]
@@ -134,6 +150,7 @@ a.uniq   # => ["a", "b", "c"]
 
 b = [["student","sam"], ["student","george"], ["teacher","matz"]]
 b.uniq { |s| s.first } # => [["student", "sam"], ["teacher", "matz"]]
+
 
 # Doing a hash table. As a reminder, a hash is a collection of key-value pairs.
 my_hash = { 
