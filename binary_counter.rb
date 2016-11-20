@@ -2,7 +2,7 @@
 arr = "11100001000100001111100"
 arr = arr.strip
 n = arr.length
-arr = arr.scan(/.{1,1}/).join(' ') # put on space in between every character
+arr = arr.scan(/.{1,1}/).join(' ') # put a space in between every character
 arr = arr.split(' ').map(&:to_s) 
 #puts n
 #print arr
