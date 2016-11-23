@@ -15,15 +15,14 @@ while spaces < sizecount
 end
 
 n=0
-sizecount = size
-size += 1
+sizecount = size - 1  # offset for the array element beginning at 0
+
 # Build the staircase by deleting elements at the end and backfilling them with a hash
 while n < size
   staircase.delete_at(sizecount)
-  staircase << hash
+  staircase << hash  
   sizecount -= 1
   puts "#{staircase.join("")}"
   n += 1
 end
   
- 
