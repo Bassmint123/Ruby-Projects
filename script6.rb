@@ -83,8 +83,16 @@ my_hash.each_key { |k| print k, " " }
 my_hash.each_value { |v| print v, " " }
 # ==> 1 2 3
 
-# Doing a nested hash. This is used in Rails a lot.
+# We can iterate over the entire hash with both keys and values using standard notation
+flash = { success: "It worked!", error: "It failed." }
+flash.each do |key, value|
+  puts "Key #{key.inspect} has value #{value.inspect}"
+end
+# ==> Key :success has value "It worked!"
+# ==> Key :error has value "It failed."
 
+
+# Doing a nested hash. This is used in Rails a lot.
 params = {}
 params[:user] = {name: "Brad", city: "Chicago", state: "Illinois"}
 puts params
