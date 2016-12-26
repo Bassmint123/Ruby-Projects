@@ -35,8 +35,8 @@ javascript.description
 #   @@ is for class variables
 #
 # Global variables can be declared in two ways: 
-#  1. Use the @ to define the variable outside of any method or class, and voilà! It's global. 
-#  2. If you want to make a variable global from inside a method or class, just start it with a $, like so: $matz.
+# 1. Use the @ to define the variable outside of any method or class, and voilà! It's global. 
+# 2. If you want to make a variable global from inside a method or class, just start it with a $, like so: $matz.
 #
 #
 class Computer
@@ -114,6 +114,21 @@ end
 
 err = SuperBadError.new
 err.display_error
+
+# How to check class hierarchy
+s = String.new("foobar")
+"foobar"
+s.class
+# Find the class of s.
+String
+s.class.superclass
+# Find the superclass of String.
+Object
+s.class.superclass.superclass # Ruby 1.9 uses a new BasicObject base class
+BasicObject
+s.class.superclass.superclass.superclass
+nil
+
 
 #
 # Example of overriding. In this case, the fight method in Dragon 
