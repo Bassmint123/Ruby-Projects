@@ -83,6 +83,16 @@ my_hash.each_key { |k| print k, " " }
 my_hash.each_value { |v| print v, " " }
 # ==> 1 2 3
 
+# Doing a nested hash. This is used in Rails a lot.
+
+params = {}
+params[:user] = {name: "Brad", city: "Chicago", state: "Illinois"}
+puts params
+# Output ==> {:user=>{:name=>"Brad", :city=>"Chicago", :state=>"Illinois"}}
+puts params[:user][:city]
+# Output ==> "Chicago"
+
+
 #
 # This is a Ruby program that can keep track of movie ratings
 # This program has CRUD functionality, which stands for Create, Read, Update, and Delete.
