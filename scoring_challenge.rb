@@ -3,15 +3,14 @@ Alice and Bob each created one problem for HackerRank. A reviewer rates the two 
 
 We define the rating for Alice's challenge to be the triplet , and the rating for Bob's challenge to be the triplet .
 
-Your task is to find their comparison scores by comparing a0, a1, and a2,  with b0, b1, and b2.
+The task is to find their comparison scores by comparing a0, a1, and a2,  with b0, b1, and b2.
 
 If ai > bi, then Alice is awarded  point.
 If ai < bi, then Bob is awarded  point.
 If ai = bi, then neither person receives a point.
-Given  and , can you compare the two challenges and print their respective comparison points?
+Can we compare the two challenges and print their respective comparison points?
 
 Input Format
-
 The first line contains 3 space-separated integers, a0, a1, and a2, describing the respective values in triplet . 
 The second line contains 3 space-separated integers, b0, b1, and b2, describing the respective values in triplet .
 
