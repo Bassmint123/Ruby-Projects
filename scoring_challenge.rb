@@ -8,7 +8,7 @@ The task is to find their comparison scores by comparing a0, a1, and a2,  with b
 If ai > bi, then Alice is awarded  point.
 If ai < bi, then Bob is awarded  point.
 If ai = bi, then neither person receives a point.
-Can we compare the two challenges and print their respective comparison points?
+Can we compare the two challenges and print their respective comparison points? ...that's the challenge.
 
 Input Format
 The first line contains 3 space-separated integers, a0, a1, and a2, describing the respective values in triplet . 
