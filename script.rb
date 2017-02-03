@@ -1,4 +1,4 @@
-# Doing some simple Ruby here
+# Basic assignment
 my_var = "Hello World"
 
 # Arithmatic functions
