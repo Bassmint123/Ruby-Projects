@@ -131,6 +131,18 @@ numbers = [5, 1, 3, 8]
 numbers.reverse!
 puts numbers
 
+# Iterating over hashes using the .each method
+matz = { "First name" => "Yukihiro",
+  "Last name" => "Matsumoto",
+  "Age" => 47,
+  "Nationality" => "Japanese",
+  "Nickname" => "Matz"
+}
+
+matz.each do |key, value|
+    puts matz[key]
+end
+
 
 # Using symbols in the hash. However, symbols are not strings
 menagerie = { :foxes => 2,
@@ -150,7 +162,7 @@ puts :symbol.object_id
 puts :symbol.object_id
 
 #
-# :my symbol # Don't do this!
+# :my symbol # Don't do this! No spaces in the symbol name
 # :my_symbol # Do this instead.
 #
 

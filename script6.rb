@@ -91,6 +91,24 @@ end
 # ==> Key :success has value "It worked!"
 # ==> Key :error has value "It failed."
 
+# The inspect method, returns a string with a literal representation of the object it’s called on
+puts (1..5).to_a  #Put an array as a string
+# ==> 1 2 3 4 5
+puts (1..5).to a.inspect # Put a literal array
+# ==> [1,2,3,4,5]
+
+puts :name, :name.inspect
+# ==> name
+# ==> :name
+>> puts "It worked!", "It worked!".inspect
+# ==> It worked!
+# ==> "It worked!"
+
+# By the way, using inspect to print an object is common enough that there’s a shortcut
+#for it, the p function
+p :name  # Same as 'puts :name.inspect'
+# ==> :name
+
 
 # Doing a nested hash. This is used in Rails a lot.
 params = {}

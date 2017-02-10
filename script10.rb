@@ -168,6 +168,16 @@ module Math
  
 # Output => 3.141592653589793
 
+# Example of unary operator constant defined on main Object class
+module Foo
+  MR_COUNT = 2
+  ::MR_COUNT = 1    # set global count to 1
+end
+
+puts MR_COUNT       # this is the global constant
+puts Foo::MR_COUNT  # this is the local "Foo" constant
+
+
 #
 # Some modules, like Math, are already present in the interpreter. Others need to be explicitly brought in, 
 # however, and we can do this using "require". We can do this simply by typing the following:  require 'module'
@@ -179,16 +189,16 @@ puts Date.today
 # Output => Whatever today's date is.
 
 
-#
-#We can do more than just require a module, however. We can also include it!
-# Any class that includes a certain module can use those module's methods!
-# A nice effect of this is that you no longer have to prepend your constants and methods with 
-# the module name. Since everything has been pulled in, you can simply write PI instead of Math::PI.
-#
-# The scoop on require vs. include 
-# The Ruby include statement simply makes a reference to a module. If that module is in a separate file, 
-# you must use require (or its less commonly used cousin, load) to drag that file in before using include.
-#
+=begin
+We can do more than just require a module, however. We can also include it!
+Any class that includes a certain module can use those module's methods!
+A nice effect of this is that you no longer have to prepend your constants and methods with 
+the module name. Since everything has been pulled in, you can simply write PI instead of Math::PI.
+
+The scoop on require vs. include 
+The Ruby include statement simply makes a reference to a module. If that module is in a separate file, 
+you must use require (or its less commonly used cousin, load) to drag that file in before using include.
+=end
 class Angle
   include Math
   attr_accessor :radians
@@ -204,3 +214,64 @@ end
 
 acute = Angle.new(1)
 acute.cosine
+
+# Mixin
+# When a module is used to mix additional behavior and information into a class, it's called a mixin. 
+# Mixins allow us to customize a class without having to rewrite code!
+
+module Action
+  def jump
+    @distance = rand(4) + 2  
+    puts "I jumped forward #{@distance} feet!"
+  end
+end
+
+class Rabbit
+  include Action
+  attr_reader :name
+  def initialize(name)
+    @name = name
+  end
+end
+
+class Cricket
+  include Action
+  attr_reader :name
+  def initialize(name)
+    @name = name
+  end
+end
+
+peter = Rabbit.new("Peter")
+jiminy = Cricket.new("Jiminy")
+
+peter.jump
+jiminy.jump
+
+# Output =>
+# I jumped forward 5 feet!
+# I jumped forward 2 feet!
+
+
+#
+# extend
+#
+# Whereas include mixes a module's methods in at the instance level (allowing instances of a particular class to use the methods), 
+# the extend keyword mixes a module's methods at the class level. This means that class itself can use the methods, 
+# as opposed to instances of the class.
+#
+# ThePresent has a .now method that we'll extend to TheHereAnd
+
+module ThePresent
+  def now
+    puts "It's #{Time.new.hour > 12 ? Time.new.hour - 12 : Time.new.hour}:#{Time.new.min} #{Time.new.hour > 12 ? 'PM' : 'AM'} (GMT)."
+  end
+end
+
+class TheHereAnd
+  extend ThePresent
+end
+
+TheHereAnd.now
+
+# Output => It's 4:16 AM (GMT). 

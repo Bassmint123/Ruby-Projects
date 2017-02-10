@@ -3,7 +3,7 @@
 puts "This is pretty cool" if true
 puts "This is a fun line too." unless false
 
-# Using the ternary for short hand. The format is --> boolean ? Do this if true: Do this if false
+# Using the ternary. The format is --> boolean ? Do this if true: Do this if false
 puts 6 < 12 ? "6 is less than a dozen!" : "6 is not less than a dozen."
 
 # Here is a more condensed version of the Case Statement
@@ -18,7 +18,7 @@ case greeting
   else puts "I don't know that language!"
 end   
 
-# Using the conditional assignment operator
+# Using the conditional assignment operator as a short circuit
 favorite_book = nil
 puts favorite_book
 
@@ -30,6 +30,12 @@ puts favorite_book
 
 favorite_book = "Why's (Poignant) Guide to Ruby"
 puts favorite_book
+
+# Using the short circuit again
+a = nil
+b = 20
+a ||= b  # This is actually =>  a || a = b
+puts "Looks like a is: #{a}"  # a is equal to 20 in this case as a was false.
 
 # Using the implicint return
 def add(a,b)
@@ -108,7 +114,7 @@ def first_n_primes(n)
   
   prime = Prime.new
   for num in (1..n)
-    prime_array.push(prime.next)
+    prime_array.push(prime.next)  # The "next" method returns the Integer equal to prime + 1.
   end
   return prime_array
 end
@@ -128,7 +134,7 @@ def first_n_primes(n)
   prime_array ||= []
   prime = Prime.new
   n.times { prime_array << (prime.next)}
-  prime_array
+  prime_array  # return prime_array
 end
 
 first_n_primes(10)
@@ -144,7 +150,7 @@ def first_n_primes(n)
 
   # The Ruby 1.9 Prime class makes the array automatically!
   prime = Prime.instance
-  prime.first n
+  prime.first n   # The "first" method returns the first element, or the first n elements, of the array.
 end
 
 first_n_primes(10)

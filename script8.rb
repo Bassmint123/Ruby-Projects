@@ -37,6 +37,7 @@ my_nums.each  { |x| puts "#{x}" }
 # ==> [1, 4, 9]
 
 # An example using the yield method.
+# Here, yield isn't doing anything but passing an argument (in this case puts) to the block that is passed into the block_test method.
 def block_test
   puts "We're in the method!"
   puts "Yielding to the block..."
@@ -59,7 +60,7 @@ yield_name("Eric") { |n| puts "My name is #{n}." }
 # Calling the method with my name!
 yield_name("Brad") { |n| puts "My name is #{n}." }
 
-# Passing the yield parameter
+# Passing the yield parameter into the block from the double method
 def double(n)
     yield(4)
 end
