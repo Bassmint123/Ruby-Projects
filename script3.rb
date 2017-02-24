@@ -17,8 +17,7 @@ else
   puts "Time to eat!"
 end
 
-
- # Real simple unless usage
+# Real simple unless usage example
 problem = false
 unless problem
    print "Unless fired"
