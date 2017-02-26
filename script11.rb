@@ -1,5 +1,5 @@
 # As Ruby does not have an enum function built in, we have to roll our own.
-# Here are two examples.
+# Here are two examples of enum.
 
 # Create an enum with Color class
 class Color
