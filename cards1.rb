@@ -46,7 +46,6 @@ class Deck
       end
     end
     
-      
   # draw from the deck. (supports overloading)
   def draw(*args)
     if args.length == 1   # check for method "draw(n)" or method "draw"
