@@ -8,9 +8,10 @@
  
  Description:
    This code was prepared as part of a requested 
-   programming assignment for Backstop. The problem relates 
-   to creating a Deck class that generates a deck of cards that
-   supports methods for: shuffle, cut, draw and draw(n).
+   programming assignment for a company I interviewed at. 
+   The problem relates to creating a Deck class that 
+   generates a deck of cards that supports methods for: 
+   shuffle, cut, draw and draw(n).
 
 =end
 
@@ -36,7 +37,7 @@ class Deck
   def initialize
     @cards = []
       ranks = %w{ 2 3 4 5 6 7 8 9 10 Jack Queen King Ace}
-      suits = %w{Spades Hearts Diamonds Clubs}
+      suits = %w{Clubs Diamonds Hearts Spades}
 
       ranks.each do |rank|
         (suits.size).times do |i|
@@ -82,10 +83,14 @@ end  # end of Deck class
 
 deck = Deck.new
 
-puts "Draw method with no parameters:"
+puts "Cut the deck"
+puts deck.cut
+puts "\nShuffle the deck"
+puts deck.shuffle
+puts "\nDraw method with no parameters:"
 puts deck.draw
 puts "\nDraw method with parameters:"
-puts deck.draw(5)
+puts deck.draw(3)
 
 
 
