@@ -1,5 +1,5 @@
 # Here we take a string of numbers and convert them to an array of integers
-# Then we add up all the integers in the array to get a final sum.
+# Then we add up all the integers in the array to get the final sum.
 print "How many numbers do you want in the array? "
 arr_size = Integer(gets.chomp)
 print "Your array size will be #{arr_size}\n"
