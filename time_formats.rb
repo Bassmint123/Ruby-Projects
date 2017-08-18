@@ -1,4 +1,4 @@
-# Prints out the current time.
+# Prints out the current time and year in different formats.
 
 t = Time.new
 print "#{t.strftime("%l")}:#{t.strftime("%M")}#{t.strftime("%P")}\n"
