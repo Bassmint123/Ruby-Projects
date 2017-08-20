@@ -32,7 +32,7 @@ loop do
   break if i <= 0
 end
 
-# Usint the break statement here. We are printing out Ruby! 30 times.
+# Using the break statement here. We are printing out Ruby! 30 times.
 m = 0
 loop do
     m += 1
